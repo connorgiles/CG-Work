@@ -7,4 +7,4 @@ Here are three projects I enjoyed building:
 
 [2. pi-rfid-reader](./pi-rfid-reader) - My first exploration of hardware: a library and client code to interact with an RFID Reader over serial ports.
 
-[3. Dynamic Connections](./dc-confirmation-module) Confirmation Module - A small web service I made at my previous job to dramatically improve operational efficiency.
+[3. dc-confirmation-module](./dc-confirmation-module) - A small web service I made at my previous job to dramatically improve operational efficiency.
