@@ -1,0 +1,44 @@
+html
+    
+    head   
+        link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css")
+        style 
+            include ../public/style.css
+        title Delivery Confirmation
+    
+    body
+        .outer.bg-info: .middle: .inner: .container
+            .panel.panel-default.col-lg-10.col-lg-offset-1
+                .panel-body
+                    .row
+                        .col-lg-10.col-lg-offset-1
+                            h1.text-center Help Us Help You!
+                            hr
+                            p.lead.
+                                At Dynamic Connections, we make it our policy to follow up on every one of our customer's orders.
+                                Through providing us with an understanding of what went wrong, 
+                                we will work hard to assure 5 star service for all of your future shipments.
+                            hr
+                            p.text-center.text-muted Please select the issue class below that best suits your problem.
+                            hr
+                    .row
+                        
+                        .col-lg-2
+                        a(href="refine?guid="+guid+"&response_type=1"): .col-lg-2
+                            span.glyphicon.glyphicon-tag
+                            p.issue-description Product Issue
+                        a(href="refine?guid="+guid+"&response_type=2"): .col-lg-2
+                            span.glyphicon.glyphicon-time
+                            p.issue-description Late Delivery
+                        a(href="refine?guid="+guid+"&response_type=3"): .col-lg-2
+                            span.glyphicon.glyphicon-user
+                            p.issue-description Experience
+                        a(href="refine?guid="+guid+"&response_type=4"): .col-lg-2
+                            span.glyphicon.glyphicon-asterisk
+                            p.issue-description Other
+            //#logos
+                .row
+                    a(href="http://www.ais-inc.com/"): .col-lg-3.col-lg-offset-3
+                        img(src="http://www.office-furniture-specialists.com/wp-content/uploads/2013/02/ais-logo.jpg").img-responsive
+                    a(href="http://www.dynamicconnections.com/"): .col-lg-3
+                        img(src="https://media.licdn.com/media/p/5/005/00b/2da/34e21e9.png").img-responsive

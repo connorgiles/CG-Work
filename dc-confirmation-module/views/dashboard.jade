@@ -1,0 +1,98 @@
+html
+    head
+        link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css")
+        script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js")
+        title DC Dashboard
+        style 
+            include ../public/style.css
+    body
+        
+        - var getClass = function(record){
+        -   if(record.response == -1){
+        -       return 'danger'
+        -   }else if(record.response == 1){
+        -       return 'success'
+        -   }else{}
+        -   if(record.read == 1){
+        -       return 'warning';
+        -   }else{
+        -       return '';    
+        -   }
+        - }
+        .container-fluid
+            h1 Consignee Confirmations
+            hr
+            .row: form(action="/dashboard")
+                .input-group.input-group-md
+                    input(type="number" id="query" name="query" placeholder="Search Workorder #").form-control
+                    span.input-group-btn: button(type="submit").btn.btn-default.btn-md Search
+                    span.input-group-btn: a(href="./dashboard").btn.btn-default.btn-md View All
+            .row
+                table.dashboard.table.table-bordered
+                    th WO#
+                    th Load#
+                    th Consignee
+                    th Location
+                    th Contact
+                    th Email
+                    th Delivery Date 
+                    th Customer 
+                    th Load Contents
+                    th Shipper
+                    th Sent
+                    th Read
+                    th Response Type
+                    th Response Time
+                    th Response Notes
+                    th Resolve
+
+                    - each record in records
+                        tr(class = getClass(record))
+                            td= record.workorder
+                            td= record.load_number
+                            td= record.consignee
+                            td= record.dropoff
+                            td= record.contact_name
+                            td= record.contact_email
+                            td= record.delivery_date
+                            td= record.customer
+                            td= record.load_contents
+                            td= record.shipper
+                            td= record.sent_time
+
+                            case record.read
+                                when 0
+                                    td None
+                                when 1
+                                    td= record.read_time
+
+                            case record.response_type
+                                when 1
+                                    td
+                                        span.label.label-danger Product Issue
+                                when 2
+                                    td 
+                                        span.label.label-warning Late Delivery
+                                when 3
+                                    td 
+                                        span.label.label-primary Poor Experience
+                                when 4
+                                    td 
+                                        span.label.label-default Other
+                                default
+                                    td None
+
+                            
+                            case record.response_type
+                                when 0
+                                    td None
+                                default
+                                    td= record.response_time
+
+                            td= record.response_notes
+                            td
+                                if record.resolved == 0
+                                    a(href="./dashboard?resolve="+record.guid).btn.btn-success Resolve
+                                else
+                                    a(href="./dashboard?unresolve="+record.guid).btn.btn-danger Re-Open 
+        

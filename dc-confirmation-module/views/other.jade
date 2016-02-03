@@ -1,0 +1,31 @@
+html
+    
+    head   
+        link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css")
+        style 
+            include ../public/style.css
+        title Product Issue
+    
+    body
+        .outer.bg-info: .middle: .inner: .container
+            .panel.panel-default.col-lg-10.col-lg-offset-1
+                .panel-body
+                    .row
+                        .col-lg-10.col-lg-offset-1
+                            h1.text-center Other Issue
+                            hr
+                            p.text-muted.text-center In logistics, all problems are best solved immediatley, that's why we proactively seek out issues before they find us.
+                            p.lead.text-primary.text-center Please identify what has happened and a member of our team will promptly contact you.
+                            form(action="/submit?guid="+guid+"&response_type="+response_type method="post")
+                                textarea(type="text" rows="4" name="response_notes").form-control
+                                hr
+                                .btn-group(role="group").pull-right
+                                    a(href="/response?guid="+guid+"&response=-1").btn.btn-default.btn-lg Cancel
+                                    button(type="submit").btn.btn-primary.btn-lg Submit
+                    .row
+            //#logos
+                .row
+                    a(href="http://www.ais-inc.com/"): .col-lg-3.col-lg-offset-3
+                        img(src="http://www.office-furniture-specialists.com/wp-content/uploads/2013/02/ais-logo.jpg").img-responsive
+                    a(href="http://www.dynamicconnections.com/"): .col-lg-3
+                        img(src="https://media.licdn.com/media/p/5/005/00b/2da/34e21e9.png").img-responsive

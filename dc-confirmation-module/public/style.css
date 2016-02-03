@@ -1,0 +1,70 @@
+.outer {
+    display: table;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.middle {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.inner {
+    margin-left: auto;
+    margin-right: auto; 
+    width: /*whatever width you want*/;
+}
+
+.glyphicon {
+	font-size: 5em;
+	text-align: center;
+	width: 100%;
+}
+
+.issue-description {
+	text-align: center;
+}
+
+#logos {
+	padding-top: 80px;
+}
+
+#logos img {
+	height:100px;
+	opacity: 0.5;
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+}
+
+#logos a img:hover {
+	opacity: 1;
+	-webkit-filter: none;
+	filter: none;
+}
+
+.img-responsive {
+    margin: 0 auto;
+}
+
+.btn.submit {
+	float:right;
+	margin-bottom: 10px;
+}
+
+th{
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+span{
+    padding-top: 3px !important;
+}
+
+.invisible{
+    display: none;
+    visibility: hidden;
+}
+
+.container-fluid {
+    margin: 20px;
+}
