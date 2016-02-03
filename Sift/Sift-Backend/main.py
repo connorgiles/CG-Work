@@ -1,7 +1,6 @@
 '''
 
 Sift 2015
-Brandon Witt, Connor Giles
 Google App Engine Endpoints
 
 '''
